@@ -102,6 +102,18 @@ The chart is saved at:
 
 - output/stock_price_trends.png
 
+### Output Snapshot (Console)
+
+```text
+Stock Price Trends
+Optimal Portfolio Allocation Weights: [0.33333333 0.33333333 0.33333333]
+Expected Return: 0.002739272989121098
+Portfolio Volatility: 0.003341947165760777
+Pattern Detection: High-risk market pattern detected
+Investment Recommendation: Reduce high-volatility exposure and increase diversification
+Stock trend chart saved at: output/stock_price_trends.png
+```
+
 ## Roadmap
 
 - Add advanced optimization methods
