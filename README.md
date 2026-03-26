@@ -1,19 +1,38 @@
 # Stock Price Trends
 
-A Python project for analyzing historical stock price movements, computing portfolio risk/return metrics, detecting simple market-pattern signals, and generating actionable recommendations.
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Status](https://img.shields.io/badge/Status-Active-2ea44f)](https://github.com/manikantmani2/Behavioural-Portfolio-Optimizer)
+[![Last Commit](https://img.shields.io/github/last-commit/manikantmani2/Behavioural-Portfolio-Optimizer)](https://github.com/manikantmani2/Behavioural-Portfolio-Optimizer/commits/main)
+[![License](https://img.shields.io/badge/License-Unlicensed-lightgrey)](https://choosealicense.com/no-permission/)
 
-## Features
+A lightweight Python project for stock trend analysis, portfolio risk estimation, pattern detection, and simple recommendation generation.
 
-- Loads market data from CSV (`Date, StockA, StockB, StockC, ...`)
-- Computes percentage-change based returns
-- Falls back to absolute differences if return data is sparse
-- Calculates:
-  - equal-weight portfolio allocation
-  - expected portfolio return
-  - portfolio volatility (risk)
-- Runs a lightweight pattern detection model
-- Generates recommendation text based on risk and detected pattern
-- Saves a line chart of stock trends to `output/stock_price_trends.png`
+## Snapshot
+
+![Stock Price Trends Chart](docs/assets/stock-price-trends.png)
+
+## Why This Project
+
+- Demonstrates end-to-end data-to-insight flow on market time-series data
+- Computes return and volatility metrics using NumPy and Pandas
+- Produces visual output suitable for reporting or demos
+- Keeps architecture modular for easy extension
+
+## Key Features
+
+- CSV-based market data ingestion
+- Automatic return-series preparation with sparse-data fallback
+- Equal-weight portfolio baseline optimization
+- Volatility-aware recommendation output
+- Auto-generated trend visualization image
+
+## Tech Stack
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
 
 ## Project Structure
 
@@ -24,6 +43,9 @@ A Python project for analyzing historical stock price movements, computing portf
 |-- README.md
 |-- data/
 |   `-- sample_market_data.csv
+|-- docs/
+|   `-- assets/
+|       `-- stock-price-trends.png
 |-- output/
 |   `-- stock_price_trends.png
 `-- src/
@@ -34,42 +56,30 @@ A Python project for analyzing historical stock price movements, computing portf
     `-- visualization.py
 ```
 
-## Requirements
-
-- Python 3.9+
-- pip
-
-Dependencies (also listed in `requirements.txt`):
-
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
-
 ## Quick Start
 
-1. Create and activate a virtual environment:
+1. Create and activate a virtual environment.
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-2. Install dependencies:
+2. Install dependencies.
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-3. Run the app:
+3. Run the project.
 
 ```powershell
 python app.py
 ```
 
-## Input Data Format
+## Input Format
 
-The main CSV should include a `Date` column followed by one or more stock columns:
+Expected CSV structure:
 
 ```csv
 Date,StockA,StockB,StockC
@@ -78,9 +88,9 @@ Date,StockA,StockB,StockC
 ...
 ```
 
-## Output
+## Runtime Output
 
-When executed, the app prints:
+The script prints:
 
 - Portfolio allocation weights
 - Expected return
@@ -88,15 +98,17 @@ When executed, the app prints:
 - Pattern detection result
 - Investment recommendation
 
-It also saves a chart at:
+The chart is saved at:
 
-- `output/stock_price_trends.png`
+- output/stock_price_trends.png
 
-## Notes
+## Roadmap
 
-- The current optimizer uses equal weighting as a baseline implementation.
-- You can replace this logic in `src/portfolio_optimizer.py` with advanced optimization methods.
+- Add advanced optimization methods
+- Add unit tests and CI checks
+- Add configurable risk appetite profiles
+- Add support for more stocks and richer datasets
 
 ## License
 
-This project is currently unlicensed. Add a license file if you plan to distribute it publicly.
+This repository is currently unlicensed.
